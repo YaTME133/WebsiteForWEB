@@ -13,11 +13,11 @@ export default function Home() {
           className="w-full max-w-3xl rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6 shadow-xl dark:border-zinc-800 dark:bg-zinc-900/60 transition-colors"
         >
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-violet-700 dark:text-violet-300">
-            ZPR Test — честная проверка знаний
+            ZPR Test - честная проверка знаний
           </h1>
           <p className="mt-3 text-base sm:text-lg text-zinc-700 dark:text-zinc-300">
-            Мы, энтузиасты из группы ИМ-32, создали платформу для честной проверки знаний — без списывания и лишних лазеек.
-            Здесь важен ваш собственный результат: задания, отправка решений по темам и проверка модератором.
+            Мы, энтузиасты из группы ИМ-32(42), создали платформу для честной проверки знаний - без списывания и лишних лазеек.
+            Здесь важен Ваш собственный результат: задания, отправка решений по темам и проверка администратором.
           </p>
           <div className="mt-4">
             <Link

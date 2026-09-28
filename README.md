@@ -54,6 +54,31 @@ GitHub Pages размещает только статический фронте
 разместить API отдельно и задать в GitHub Actions переменную `VITE_API_BASE` с URL API
 (например, `https://your-api.example.com/api`).
 
+### Railway для backend
+
+1. В Railway создайте проект и выберите `Deploy from GitHub repo`.
+2. Выберите репозиторий `YaTME133/WebsiteForWEB`.
+3. В настройках созданного сервиса укажите `Root Directory: server`.
+4. Укажите команду запуска `npm start`.
+5. Добавьте переменные окружения:
+
+```
+JWT_SECRET=<длинная случайная строка>
+CORS_ORIGIN=https://yatme133.github.io
+SERVE_CLIENT=false
+DB_PATH=/data/database.sqlite
+```
+
+6. Добавьте Railway Volume и смонтируйте его в `/data`, иначе SQLite может
+   потерять данные при следующем деплое.
+7. Сгенерируйте публичный домен Railway и проверьте:
+   `https://<ваш-домен>.up.railway.app/api/tasks`
+8. В GitHub откройте `Settings` → `Secrets and variables` → `Actions` → `Variables`
+   и создайте переменную `VITE_API_BASE` со значением:
+   `https://<ваш-домен>.up.railway.app/api`
+9. Повторно запустите workflow GitHub Pages. После этого фронтенд будет отправлять
+   запросы на Railway, а не на несуществующий `/api` GitHub Pages.
+
 Если команда `node` или `npm` не найдена, установите Node.js LTS и перезапустите VS Code/PowerShell:
 https://nodejs.org/
 
