@@ -38,6 +38,30 @@ npm run dev:all
 - Сервер: http://localhost:4000
 - Клиент: http://localhost:5173
 
+## Публикация на GitHub Pages
+
+В репозитории уже добавлен workflow `.github/workflows/deploy-pages.yml`.
+После отправки изменений в ветку `main` GitHub автоматически соберёт и опубликует клиент.
+
+Один раз включите Pages в настройках репозитория:
+`Settings` → `Pages` → `Source` → `GitHub Actions`.
+
+Для этого репозитория адрес клиента будет:
+`https://yatme133.github.io/WebsiteForWEB/`
+
+GitHub Pages размещает только статический фронтенд. Express-сервер из папки `server`
+и SQLite-база там не запускаются. Для авторизации, задач и отправки решений нужно
+разместить API отдельно и задать в GitHub Actions переменную `VITE_API_BASE` с URL API
+(например, `https://your-api.example.com/api`).
+
+Если команда `node` или `npm` не найдена, установите Node.js LTS и перезапустите VS Code/PowerShell:
+https://nodejs.org/
+
+Файл `server/.env` читается автоматически при запуске сервера. Его можно создать по шаблону:
+```
+copy server\.env.example server\.env
+```
+
 Если порт 4000 занят:
 - Остановите предыдущий node-процесс или измените PORT в `server/.env`.
 - Проверка порта в PowerShell:

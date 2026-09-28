@@ -1,6 +1,6 @@
+import './config.js';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import { db, initDb } from './db.js';
 import path from 'path';
@@ -8,8 +8,6 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { seed } from './seed.js';
 import { signToken, authMiddleware, requireRole } from './auth.js';
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
