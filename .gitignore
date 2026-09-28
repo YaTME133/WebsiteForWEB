@@ -1,0 +1,20 @@
+# Node
+node_modules/
+.env
+npm-debug.log*
+
+# Logs
+logs
+*.log
+
+# Database
+/project/database/*.sqlite
+/project/database/*.sqlite-journal
+
+# Vite
+/client/dist
+/client/.vite
+
+# OS
+.DS_Store
+Thumbs.db
